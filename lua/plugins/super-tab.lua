@@ -17,6 +17,8 @@ return {
     -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
     -- See the full "keymap" documentation for information on defining your own keymap.
+
+    -- Добавление прeсета, где по enter выбирается предположение. Также добавил аналогичную функцию по нажатию на tab
     keymap = {
       preset = "enter",
       ["<Tab>"] = {

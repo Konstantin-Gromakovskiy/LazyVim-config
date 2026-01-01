@@ -5,16 +5,14 @@ return {
       diagnostics = {
         virtual_text = false,
       },
-      servers = { eslint = {} },
       setup = {
         eslint = function()
-          Snacks.util.lsp.on(function(some, client)
-            if client.name == "eslint" then
-              client.server_capabilities.documentFormattingProvider = true
-            else
-              client.server_capabilities.documentFormattingProvider = false
-            end
-          end)
+          LazyVim.format.register(LazyVim.lsp.formatter({
+            name = "eslint: lsp",
+            filter = "eslint",
+            primary = true,
+            priority = 500,
+          }))
         end,
       },
     },
