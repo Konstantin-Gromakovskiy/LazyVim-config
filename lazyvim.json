@@ -1,6 +1,7 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.ai.codeium",
+    "lazyvim.plugins.extras.ai.avante",
+    "lazyvim.plugins.extras.ai.copilot",
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.sql",
     "lazyvim.plugins.extras.lang.tailwind",
