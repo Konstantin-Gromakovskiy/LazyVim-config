@@ -7,23 +7,31 @@ return {
       },
       servers = {
         cssls = {
-          filetypes = { "css", "scss", "less", "vue" },
+          filetypes = { "css", "less", "vue" },
           settings = {
             css = { validate = true },
-            scss = { validate = true },
+            -- SCSS проверяет somesass_ls
+            scss = { validate = false },
             less = { validate = true },
           },
         },
-      },
-      setup = {
-        eslint = function()
-          LazyVim.format.register(LazyVim.lsp.formatter({
-            name = "eslint: lsp",
-            filter = "eslint",
-            primary = true,
-            priority = 500,
-          }))
-        end,
+        somesass_ls = {
+          filetypes = { "scss", "sass", "vue" },
+          settings = {
+            somesass = {
+              workspace = {
+                -- алиас Nuxt `~/` -> корень проекта
+                importAliases = { ["~/"] = "/" },
+              },
+              scss = {
+                completion = {
+                  -- подсказки только из модулей, подключённых через @use
+                  suggestFromUseOnly = true,
+                },
+              },
+            },
+          },
+        },
       },
     },
   },

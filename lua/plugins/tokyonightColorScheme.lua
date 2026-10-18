@@ -8,6 +8,10 @@ return {
         hl.CursorLine = { bg = "#16171f" } -- линия курсора
         hl.BlinkCmpGhostText = { fg = "#5D6791" } -- для дополнений в коде
         hl.DiagnosticUnnecessary = { fg = "#646E9C" } -- неиспользуемые переменные
+
+        -- doc-комментарии (JSDoc и т.п.) отдельным цветом, как в WebStorm
+        -- языковые варианты (@comment.documentation.<lang>) наследуют эту группу
+        hl["@comment.documentation"] = { fg = "#7a9f6a", italic = true }
       end,
     },
   },
